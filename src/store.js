@@ -4,10 +4,10 @@ import SearchBarSlice from "./Components/SearchBar/SearchBarSlice";
 import PostsSlice from "./Components/Posts/PostsSlice";
 
 export default configureStore({
-    reducer: {
-      subreddits: SubredditSlice,
-      search: SearchBarSlice,
-      posts: PostsSlice
-    }
+  reducer: {
+    subreddits: SubredditSlice,
+    search: SearchBarSlice,
+    posts: PostsSlice
+  }
 })
 

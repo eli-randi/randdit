@@ -13,10 +13,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Main />} />
-              <Route path='/subreddits'>
-                <Route path=':subredditId' element={<SubredditPage />} />
-              </Route>
-              
+            <Route path='/subreddits'>
+              <Route path=':subredditId' element={<SubredditPage />} />
+            </Route>
+
           </Routes>
         </BrowserRouter>
       </Provider>

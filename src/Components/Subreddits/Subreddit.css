@@ -29,9 +29,9 @@
 
 
 .TopSR {
-     border: 1px solid #8F8BBD;   
-     border-top: none;
-     border-radius: 0 0 10px 10px;
+    border: 1px solid #8F8BBD;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
 }
 
 .SRItemButton button {
@@ -88,7 +88,13 @@
     justify-content: center;
 }
 
-
+.LoadingSubreddits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 3% 2% 5%;
+    border-top: 1px solid #8F8BBD;
+}
 
 .Content {
     display: flex;
@@ -97,15 +103,10 @@
     justify-content: space-between;
 }
 
-@media only screen and (max-width: 1000px) {
-    .Content {
-        margin: 2% 5%;
-    }
-}
 
 .HeaderBanner img {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
 }
 
 .HeaderDetails {
@@ -133,7 +134,8 @@
     margin-top: 5px;
 }
 
-.HeaderTitle h2, h5 {
+.HeaderTitle h2,
+h5 {
     margin: 0;
 }
 
@@ -168,11 +170,11 @@
 }
 
 .AboutSR {
-        width: 350px;
-        height: fit-content;
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
+    width: 350px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .AboutSRHeader {
@@ -202,9 +204,9 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    border: 1px solid #8F8BBD;   
-     border-top: none;
-     border-radius: 0 0 10px 10px;
+    border: 1px solid #8F8BBD;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
 }
 
 .AboutSRSubscribers {
@@ -226,17 +228,32 @@ hr {
     .TopSRBox {
         display: none;
     }
+
     .AboutSR {
         display: none;
     }
+
     .HeaderDetails {
         padding: 0 5%;
         width: 90%;
     }
+
     .HeaderTitle h2 {
         font-size: 20px;
     }
+
     .HeaderJoin {
         margin-left: 10px;
     }
-  }
+}
+
+@media only screen and (max-width: 1000px) {
+    .Content {
+        margin: 2% 5%;
+    }
+
+    .HeaderDetails {
+        padding: 0 5%;
+        width: 90%;
+    }
+}

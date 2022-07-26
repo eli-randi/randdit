@@ -65,12 +65,11 @@ export const AuthProvider = (props) => {
       }
     }
 
-    if(bearerToken == null) {
+    if (bearerToken == null) {
       handleLogin();
     }
-    
   }
-    , [bearerToken]
+    , [bearerToken, setBearerToken]
   )
 
   return <AuthContext.Provider value={{ bearerToken }}>{props.children}</AuthContext.Provider>;
