@@ -15,6 +15,8 @@ export const Subreddit = () => {
     const auth = useContext(AuthContext);
     const subredditsFollowed = useSelector(selectSubredditsFollowed)
     const subredditsLoading = useSelector(selectSubredditsLoading)
+    const subreddits = useSelector(selectSubreddits);
+    
     useEffect(() => {
         dispatch(getSubreddits(auth));
         dispatch(getSubredditsFollowed(auth))
@@ -39,7 +41,7 @@ export const Subreddit = () => {
     }
 
     const ShowTopSubreddits = () => {
-        const subreddits = useSelector(selectSubreddits);
+        
         return (
             subreddits.map((subreddit, index) => {
                 const link = subreddit.display_name_prefixed.replace('r/', '')
@@ -59,7 +61,6 @@ export const Subreddit = () => {
                             </Link>
                         </div>
                         <div className="SRItemButton">
-                            {subredditsLoading && null}
                             <button onClick={() => { followUnfollowSubreddit(subreddit) }}>{subredditsFollowed.includes(subreddit.id) ? 'Unfollow' : 'Follow'}</button>
                         </div>
                     </div>
@@ -76,7 +77,7 @@ export const Subreddit = () => {
                 </h3>
             </div>
             <div className="TopSR">
-                {subredditsLoading && renderSubredditsLoading()}
+                {subredditsLoading && !subreddits && renderSubredditsLoading()}
                 <ShowTopSubreddits />
             </div>
         </div>

@@ -13,7 +13,7 @@ const generateRandomString = () => {
   return result;
 }
 
-const hostUri = 'http://localhost:3000/'
+const hostUri = 'https://randdit.elisa.codes/'
 const clientId = '-2uqyTxo_KQjfc3sxmu3FA'
 const clientSecret = 'b8x_7fVHiLxmr_0B0yQQNTkkSdQAvw'
 
