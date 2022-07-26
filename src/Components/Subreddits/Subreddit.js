@@ -77,8 +77,7 @@ export const Subreddit = () => {
                 </h3>
             </div>
             <div className="TopSR">
-                {subredditsLoading && !subreddits && renderSubredditsLoading()}
-                <ShowTopSubreddits />
+                {subredditsLoading ? renderSubredditsLoading(): <ShowTopSubreddits/>}
             </div>
         </div>
 
