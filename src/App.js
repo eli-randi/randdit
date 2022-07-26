@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { Main } from './Components/HomePage/Main';
+import store from './store';
+import { AuthProvider } from './utils/Authorization';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { SubredditPage } from './Components/Subreddits/SubredditPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AuthProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Main />} />
+              <Route path='/subreddits'>
+                <Route path=':subredditId' element={<SubredditPage />} />
+              </Route>
+              
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </AuthProvider>
+  )
+
 }
 
 export default App;
+
