@@ -1,0 +1,31 @@
+ .SearchBar { 
+    margin-right: 30px;
+    border-radius: 10px;
+    font-family: 'IBM Plex Sans', 'sans serif';
+    margin-top: 7px;
+    width: 300px;
+}
+
+.SearchBar fieldset {
+    height: 50px;
+}
+
+
+.SearchBar label {
+    color: #8F8BBD;
+    top: -3px;
+}
+
+.SearchBar.MuiFormLabel {
+    color: white
+}
+
+.SearchBar button {
+    top: -3px;
+}
+
+@media only screen and (max-width: 600px) {
+    .SearchBar {
+        width: 100px;
+    }
+}

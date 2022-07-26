@@ -1,0 +1,242 @@
+.TopSRBox {
+    width: 350px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.TopSRHeader {
+    width: 100%;
+    height: 100%;
+    height: 70px;
+    text-align: right;
+    background-image: url('./shutterstock_574261726_thumb.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+
+.TopSRHeader h3 {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    color: white;
+    font-weight: 600;
+    line-height: 20px;
+    margin-right: 20px;
+}
+
+
+.TopSR {
+     border: 1px solid #8F8BBD;   
+     border-top: none;
+     border-radius: 0 0 10px 10px;
+}
+
+.SRItemButton button {
+    color: white;
+    background-color: #4D487E;
+    border: none;
+    width: 70px;
+    height: 25px;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+}
+
+.SRItemButton button:hover {
+    cursor: pointer;
+    background-color: #6c65a6;
+}
+
+.SRItemList {
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    font-weight: 500;
+    text-decoration: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #8F8BBD;
+    text-align: center;
+    padding: 2% 3% 2% 5%;
+}
+
+.SRItemDetails a {
+    text-decoration: none;
+    color: black;
+}
+
+.SRItemDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.SRItemDetails img {
+    margin-right: 5px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.SRItemButton {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+}
+
+
+
+.Content {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 15%;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Content {
+        margin: 2% 5%;
+    }
+}
+
+.HeaderBanner img {
+    width: 100%;
+    height: 10vh;
+}
+
+.HeaderDetails {
+    background-color: white;
+    width: 60%;
+    padding: 0px 20%;
+    height: 10vh;
+    display: inline-flex;
+    margin-top: -5px;
+}
+
+.HeaderDetails img {
+    width: 80px;
+    border-radius: 50%;
+    margin-top: -30px;
+    border: 10px white solid;
+}
+
+.HeaderTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: 'IBM Plex Sans', 'sans serif';
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.HeaderTitle h2, h5 {
+    margin: 0;
+}
+
+.HeaderJoin button {
+    color: #4D487E;
+    background-color: white;
+    border: 2px #4D487E solid;
+    width: 100px;
+    height: 35px;
+    border-radius: 35px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.HeaderJoin button:hover {
+    background-color: #eae8fc;
+    cursor: pointer;
+}
+
+.HeaderJoin button:active {
+    background-color: #4D487E;
+    cursor: pointer;
+    color: white;
+}
+
+
+.HeaderJoin {
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.AboutSR {
+        width: 350px;
+        height: fit-content;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+}
+
+.AboutSRHeader {
+    width: 100%;
+    height: 100%;
+    height: 70px;
+    text-align: center;
+    background-image: url('./aboutSRHeader.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.AboutSRHeader h3 {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.AboutSRDetails {
+    padding: 5% 10%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: 1px solid #8F8BBD;   
+     border-top: none;
+     border-radius: 0 0 10px 10px;
+}
+
+.AboutSRSubscribers {
+    color: #4D487E;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 0%;
+}
+
+hr {
+    border: 1px #a39ddb solid;
+    border-radius: 50%;
+    width: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+    .TopSRBox {
+        display: none;
+    }
+    .AboutSR {
+        display: none;
+    }
+    .HeaderDetails {
+        padding: 0 5%;
+        width: 90%;
+    }
+    .HeaderTitle h2 {
+        font-size: 20px;
+    }
+    .HeaderJoin {
+        margin-left: 10px;
+    }
+  }

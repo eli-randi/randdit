@@ -1,0 +1,19 @@
+.Homepage {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Content {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 10%;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1000px) {
+    .Content {
+        margin: 2% 2%;
+    }
+}
