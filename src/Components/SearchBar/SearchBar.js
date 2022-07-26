@@ -17,10 +17,10 @@ export default function SearchBar() {
 
   useEffect(() => {
     dispatch(getSearchResults({ auth: auth, searchTerm: searchTerm }));
-  }, [searchTerm, dispatch])
+  }, [searchTerm, dispatch, auth])
 
   searchResults = useSelector(selectSearch)
-  
+
   return (
     <Autocomplete
       id="search-bar"
@@ -37,28 +37,28 @@ export default function SearchBar() {
             pathname: `/subreddits/${option.display_name}`,
           }}
         >
-        <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-          <img
-            loading="lazy"
-            width="20"
-            src={option.header_img}
-            alt=""
-          />
-          <p>{option.display_name_prefixed}</p>
-          
-        </Box>
+          <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
+            <img
+              loading="lazy"
+              width="20"
+              src={option.header_img}
+              alt=""
+            />
+            <p>{option.display_name_prefixed}</p>
+
+          </Box>
         </Link>
 
       )}
       renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Search"
-            inputProps={{
-              ...params.inputProps,
-              autoComplete: 'new-password',
-            }}
-          />
+        <TextField
+          {...params}
+          label="Search"
+          inputProps={{
+            ...params.inputProps,
+            autoComplete: 'new-password',
+          }}
+        />
       )}
     />
   );

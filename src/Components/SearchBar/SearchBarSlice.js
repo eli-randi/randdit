@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
 export const getSearchResults = createAsyncThunk('search/getSearch',
-    async ({auth, searchTerm}) => {
+    async ({ auth, searchTerm }) => {
         const params = {
             'limit': 5,
             'q': searchTerm,

@@ -27,7 +27,6 @@
     align-items: center;
     font-weight: bold;
     color: #4D487E
-   
 }
 
 .PostsChooseBox button:hover {
@@ -38,12 +37,19 @@
 .PostsChooseBox button:active {
     background-color: #8F8BBD;
     color: white;
-    
+
 }
 
 .PostsList {
     margin: 5% 5%;
-    
+
+}
+
+.LoadingPosts {
+    border: 1px #4D487E solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 5% 5%;
 }
 
 @media only screen and (max-width: 800px) {
@@ -51,4 +57,3 @@
         width: 90%
     }
 }
-

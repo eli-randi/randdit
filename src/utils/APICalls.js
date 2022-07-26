@@ -5,7 +5,7 @@ export const getFromApi = async (path, params, token) => {
     const response = await fetch(fullUrl, {
         method: 'GET',
         headers: {
-            'Authorization': `bearer ${token}`, 
+            'Authorization': `bearer ${token}`,
             'User-Agent': 'Elisa Randisi by elirandi12'
         },
     }).then((resp) => {
@@ -17,11 +17,11 @@ export const getFromApi = async (path, params, token) => {
 export const postToApi = async (path, params, token) => {
     const paramsAsFormData = new URLSearchParams(params).toString();
     const fullUrl = baseUrl + path;
-    const response = await fetch (fullUrl, {
+    const response = await fetch(fullUrl, {
         method: 'POST',
         body: paramsAsFormData,
         headers: {
-            'Authorization': `bearer ${token}`, 
+            'Authorization': `bearer ${token}`,
             'Content-Type': "application/x-www-form-urlencoded",
             'User-Agent': 'Elisa Randisi by elirandi12'
         },
