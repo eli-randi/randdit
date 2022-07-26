@@ -5,7 +5,7 @@ import { AppBar } from "../AppBar/AppBar";
 import './Subreddit.css'
 import { Posts } from "../Posts/Posts";
 import { useParams } from 'react-router-dom'
-import { getCurrentSubreddit, getSubredditsFollowed, selectSubredditsLoading } from "./SubredditSlice";
+import { getCurrentSubreddit, getSubredditsFollowed, selectCurrentSubredditLoading } from "./SubredditSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentSubreddit, selectSubredditsFollowed } from "./SubredditSlice";
 import SubredditHeaderDefault from './header_default.jpg'
@@ -37,7 +37,7 @@ export function SubredditPage() {
     const SubredditHeader = () => {
         const subredditData = useSelector(selectCurrentSubreddit);
         const subredditsFollowed = useSelector(selectSubredditsFollowed);
-        const subredditsLoading = useSelector(selectSubredditsLoading)
+        const subredditsLoading = useSelector(selectCurrentSubredditLoading)
 
         const followUnfollowSubreddit = () => {
             if (subredditsFollowed.includes(subredditData.id)) {
@@ -81,7 +81,7 @@ export function SubredditPage() {
 
     const AboutSubreddit = () => {
         const subredditData = useSelector(selectCurrentSubreddit);
-        const subredditsLoading = useSelector(selectSubredditsLoading)
+        const subredditsLoading = useSelector(selectCurrentSubredditLoading)
 
         return (
             <div className="AboutSR">

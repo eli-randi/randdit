@@ -126,6 +126,8 @@ export const selectSubredditsFollowed = (state) => state.subreddits.subredditsFo
 
 export const selectCurrentSubreddit = (state) => state.subreddits.currentSubreddit;
 
-export const selectSubredditsLoading = (state) => state.subreddits.isLoadingSubreddits || state.subreddits.isLoadingCurrent;
+export const selectSubredditsLoading = (state) => state.subreddits.isLoadingSubreddits;
+
+export const selectCurrentSubredditLoading = (state) => state.subreddits.isLoadingCurrent;
 
 export default subredditSlice.reducer;
