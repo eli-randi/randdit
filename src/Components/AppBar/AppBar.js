@@ -13,7 +13,9 @@ export const AppBar = () => {
             >
                 <div className="Logo">
 
-                    <img src={RandditLogo} />
+                    <img 
+                    alt='Randdit Logo'
+                    src={RandditLogo} />
                     <h2>randdit</h2>
                 </div>
             </Link>
