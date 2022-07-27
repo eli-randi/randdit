@@ -1,4 +1,3 @@
-import RandditLogo from '../AppBar/randditLogo.png'
 import './LandingPage.css'
 import UFOLottie from './UFO_Lottie.json'
 import Lottie from 'lottie-react'

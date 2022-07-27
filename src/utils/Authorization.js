@@ -3,30 +3,9 @@ import { useEffect, createContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./LocalStorage";
 
-// const generateRandomString = () => {
-//   var result = '';
-//   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//   var charactersLength = characters.length;
-//   for (var i = 0; i < 6; i++) {
-//     result += characters.charAt(Math.floor(Math.random() *
-//       charactersLength));
-//   }
-//   return result;
-// }
-
 const hostUri = 'https://randdit.elisa.codes/'
 const clientId = '-2uqyTxo_KQjfc3sxmu3FA'
 const clientSecret = 'b8x_7fVHiLxmr_0B0yQQNTkkSdQAvw'
-
-// export function getOauthUrl() {
-//   const stateId = generateRandomString();
-//   return `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${stateId}&redirect_uri=${hostUri}&duration=permanent&scope=identity,edit,flair,history,modconfig,modflair,modlog,modposts,modwiki,mysubreddits,privatemessages,read,report,save,submit,subscribe,vote`
-// }
-
-// export function redirectToReddit() {
-//   let url = getOauthUrl();
-//   window.location.replace(url)
-// }
 
 export async function getToken(returnCode) {
 
@@ -49,8 +28,6 @@ export async function getToken(returnCode) {
 
 }
 
-
-
 export const AuthContext = createContext(null);
 
 export const AuthProvider = (props) => {
@@ -67,7 +44,7 @@ export const AuthProvider = (props) => {
       if (redditOneTimeUseCode) {
         auth = await getToken(redditOneTimeUseCode);
         setBearerToken(auth.access_token);
-        if (location.pathname == '/') {
+        if (location.pathname === '/') {
           navigate('/homepage')
         }
       } else if (bearerToken == null){
@@ -83,7 +60,7 @@ export const AuthProvider = (props) => {
       handleLogin();
     }
   }
-    , [bearerToken, setBearerToken]
+    , [bearerToken, setBearerToken, location.pathname, navigate]
   )
 
   return <AuthContext.Provider value={{ bearerToken }}>{props.children}</AuthContext.Provider>;
