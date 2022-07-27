@@ -3,17 +3,15 @@ import { useEffect, createContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./LocalStorage";
 
-const hostUri = 'https://randdit.elisa.codes/'
-const clientId = '-2uqyTxo_KQjfc3sxmu3FA'
+const hostUri = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://randdit.elisa.codes/'
+export const redirectUri = hostUri + 'homepage'
+export const clientId = '-2uqyTxo_KQjfc3sxmu3FA'
 const clientSecret = 'b8x_7fVHiLxmr_0B0yQQNTkkSdQAvw'
 
 export async function getToken(returnCode) {
 
-  const form = `grant_type=authorization_code&code=${returnCode}&redirect_uri=${hostUri}`
-
+  const form = `grant_type=authorization_code&code=${returnCode}&redirect_uri=${redirectUri}`
   const credentials = Buffer.from(`${clientId}:${clientSecret}`).toString("base64")
-  console.log(credentials)
-
   const res = await fetch('https://www.reddit.com/api/v1/access_token', {
     method: "POST",
     headers: {

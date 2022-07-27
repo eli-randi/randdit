@@ -1,9 +1,7 @@
 import './LandingPage.css'
 import UFOLottie from './UFO_Lottie.json'
-import UFOLoading from './UFO_Lottie_Loading.json'
 import Lottie from 'lottie-react'
-import { useContext } from 'react';
-import { AuthProvider } from '../../utils/Authorization';
+import { redirectUri, clientId } from '../../utils/Authorization'
 
 const generateRandomString = () => {
     var result = '';
@@ -16,12 +14,9 @@ const generateRandomString = () => {
     return result;
 }
 
-const hostUri = 'https://randdit.elisa.codes/'
-const clientId = '-2uqyTxo_KQjfc3sxmu3FA'
-
 function getOauthUrl() {
     const stateId = generateRandomString();
-    return `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${stateId}&redirect_uri=${hostUri}&duration=permanent&scope=identity,edit,flair,history,modconfig,modflair,modlog,modposts,modwiki,mysubreddits,privatemessages,read,report,save,submit,subscribe,vote`
+    return `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${stateId}&redirect_uri=${redirectUri}&duration=permanent&scope=identity,edit,flair,history,modconfig,modflair,modlog,modposts,modwiki,mysubreddits,privatemessages,read,report,save,submit,subscribe,vote`
 }
 
 
@@ -31,18 +26,6 @@ function redirectToReddit() {
 }
 
 export const LandingPage = () => {
-    const auth = useContext(AuthProvider);
-
-    if(auth && auth.bearerToken) {
-        return (
-            <div className='LoadingPage'>
-                <Lottie animationData={UFOLoading} />
-                <h1> Loading... </h1>
-            </div>
-        )
-    }
-
-
     return (
         <div className='LandingPage'>
             <div className="IntroBox">
