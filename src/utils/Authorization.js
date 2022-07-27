@@ -39,25 +39,19 @@ export const AuthProvider = (props) => {
     const params = new URLSearchParams(document.location.search);
     const handleLogin = async () => {
       let redditOneTimeUseCode = params.get('code');
-      let auth;
-      if (redditOneTimeUseCode) {
-        auth = await getToken(redditOneTimeUseCode);
+      
+      if (bearerToken && location.pathname === '/') {
+        navigate('/homepage')
+      } else if (redditOneTimeUseCode) {
+        const auth = await getToken(redditOneTimeUseCode);
         setBearerToken(auth.access_token);
-        if (location.pathname === '/') {
-          navigate('/homepage')
-        }
       } else if (bearerToken == null){
-        console.log('here');
         if (location.pathname !== '/') {
           navigate('/')
         }
-        
       }
     }
-
-    if (bearerToken == null) {
       handleLogin();
-    }
   }
     , [bearerToken, setBearerToken, location.pathname, navigate]
   )
