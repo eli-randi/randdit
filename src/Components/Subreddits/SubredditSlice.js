@@ -54,7 +54,6 @@ const subredditSlice = createSlice({
             const path = '/api/subscribe'
             postToApi(path, params, auth.bearerToken);
             state.subredditsFollowed = [...state.subredditsFollowed, id]
-            console.log(state.subredditsFollowed)
         },
         unfollowSubreddit: (state, action) => {
             const { id, auth } = action.payload;

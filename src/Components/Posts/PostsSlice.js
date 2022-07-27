@@ -70,9 +70,11 @@ const postSlice = createSlice({
                 state.error = false;
             })
             .addCase(loadMorePosts.rejected, (state, action) => {
-                console.log('rejected')
                 state.isLoadingMore = false;
                 state.error = true;
+            })
+            .addCase(votePost.fulfilled, (state, action) => {
+                state.postsVoted = [...state.postsVoted, action.payload.postId]
             })
     )
 }
