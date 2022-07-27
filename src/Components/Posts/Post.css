@@ -19,7 +19,6 @@
     color: white;
     font-weight: 500;
     font-size: 0.8rem;
-    padding-top: 10px;
 }
 
 .RightSide {
@@ -37,10 +36,6 @@
     font-size: 20px;
     font-weight: bold;
     height: -webkit-fill-available;
-}
-
-.VoteButton {
-    color: white;
 }
 
 .Media {

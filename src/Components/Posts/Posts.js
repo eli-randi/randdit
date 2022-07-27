@@ -17,6 +17,11 @@ const style = {
     color: '#4D487E'
 }
 
+const styleCurrent = {
+    height: '20px',
+    color: 'white'
+}
+
 export const Posts = (props) => {
     const auth = useContext(AuthContext);
     const dispatch = useDispatch();
@@ -50,7 +55,6 @@ export const Posts = (props) => {
     const PostsList = () => {
         const posts = useSelector(selectPosts);
         const postsLoading = useSelector(selectPostsLoading)
-        console.log(posts)
         return (
             <div>
                 {postsLoading && renderPostsLoading()}
@@ -75,10 +79,31 @@ export const Posts = (props) => {
     return (
         <div className="PostsBox">
             <div className="PostsChooseBox">
-                {!props.path ? <button onClick={() => setPathSuffix('/best')}><RocketLaunchIcon style={style} /> Best </button> : null}
-                <button onClick={() => setPathSuffix('/hot')}><WhatshotIcon style={style} /> Hot </button>
-                <button onClick={() => setPathSuffix('/new')}><AutoAwesomeOutlinedIcon style={style} /> New</button>
-                <button onClick={() => setPathSuffix('/top')}><ArrowUpwardRoundedIcon style={style} /> Top</button>
+                {!props.path ? <button
+                    className={pathSuffix === '/best' ? 'current' : ''}
+                    onClick={() => setPathSuffix('/best')}>
+                    <RocketLaunchIcon style={pathSuffix === '/best' ? styleCurrent : style} />
+                    Best
+                </button> :
+                    null}
+                <button
+                    className={pathSuffix === '/hot' ? 'current' : ''}
+                    onClick={() => setPathSuffix('/hot')}>
+                    <WhatshotIcon style={pathSuffix === '/hot' ? styleCurrent : style} />
+                    Hot
+                </button>
+                <button
+                    className={pathSuffix === '/new' ? 'current' : ''}
+                    onClick={() => setPathSuffix('/new')}>
+                    <AutoAwesomeOutlinedIcon style={pathSuffix === '/new' ? styleCurrent : style} />
+                    New
+                </button>
+                <button
+                    className={pathSuffix === '/top' ? 'current' : ''}
+                    onClick={() => setPathSuffix('/top')}>
+                    <ArrowUpwardRoundedIcon style={pathSuffix === '/top' ? styleCurrent : style} />
+                    Top
+                </button>
             </div>
             <div className="PostsList">
                 <PostsList />

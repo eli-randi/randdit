@@ -37,7 +37,11 @@
 .PostsChooseBox button:active {
     background-color: #8F8BBD;
     color: white;
+}
 
+.PostsChooseBox button.current {
+    background-color: #4D487E;
+    color: white;
 }
 
 .PostsList {
