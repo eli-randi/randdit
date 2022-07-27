@@ -8,7 +8,7 @@ export const AppBar = () => {
         <div className="AppBar">
             <Link style={{textDecoration: 'none'}}
                 to={{
-                    pathname: `/`,
+                    pathname: `/homepage`,
                 }}
             >
                 <div className="Logo">

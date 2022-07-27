@@ -1,0 +1,79 @@
+.LandingPage {
+    overflow-y: hidden;
+}
+
+.IntroBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    margin-top: 5%;
+    font-family: 'IBM Plex Sans', 'sans serif';
+    font-weight: 100;
+    overflow-y: hidden;
+  }
+  .typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid #4D487E;
+    white-space: nowrap;
+    animation: typing 2.5s steps(50, end) forwards, blink .5s step-end infinite alternate;
+    font-size: 3rem;
+    width: 0;
+  }
+
+  .typewriter {
+    width: auto;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    } }
+
+
+.LottieImage {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: -100px;
+    width: 70%;
+}
+
+.LottieImage button {
+    font-family: 'IBM Plex Sans', 'sans serif';
+    font-size: 20px;
+    padding: 2% 3%;
+    border-radius: 25px;
+    margin-top: -15%;
+    color: white;
+    /* border: 3px white solid; */
+    box-shadow: 5px 10px 5px rgb(211, 193, 245);
+    background-color: #4D487E;
+    margin-bottom: 15px;
+    border: none;
+    z-index: 1;
+}
+
+.LottieImage button:hover {
+    cursor: pointer;
+    /* background-color: #6f68b3; */
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+   animation: slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+
+.LottieImage button:active {
+    cursor: pointer;
+    background-color: #6f68b3;
+}
