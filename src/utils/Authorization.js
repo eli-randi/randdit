@@ -41,6 +41,7 @@ export const AuthProvider = (props) => {
       let redditOneTimeUseCode = params.get('code');
       
       if (bearerToken && location.pathname === '/') {
+        
         navigate('/homepage')
       } else if (redditOneTimeUseCode) {
         const auth = await getToken(redditOneTimeUseCode);

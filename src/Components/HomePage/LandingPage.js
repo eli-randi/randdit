@@ -1,6 +1,9 @@
 import './LandingPage.css'
 import UFOLottie from './UFO_Lottie.json'
+import UFOLoading from './UFO_Lottie_Loading.json'
 import Lottie from 'lottie-react'
+import { useContext } from 'react';
+import { AuthProvider } from '../../utils/Authorization';
 
 const generateRandomString = () => {
     var result = '';
@@ -28,6 +31,17 @@ function redirectToReddit() {
 }
 
 export const LandingPage = () => {
+    const auth = useContext(AuthProvider);
+
+    if(auth && auth.bearerToken) {
+        return (
+            <div className='LoadingPage'>
+                <Lottie animationData={UFOLoading} />
+                <h1> Loading... </h1>
+            </div>
+        )
+    }
+
 
     return (
         <div className='LandingPage'>

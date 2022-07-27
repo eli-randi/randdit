@@ -2,6 +2,16 @@
     overflow-y: hidden;
 }
 
+.LoadingPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+
 .IntroBox{
     display: flex;
     flex-direction: column;
