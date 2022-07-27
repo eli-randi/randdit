@@ -1,6 +1,9 @@
 import './LandingPage.css'
 import UFOLottie from './UFO_Lottie.json'
 import Lottie from 'lottie-react'
+import { AuthContext } from '../../utils/Authorization';
+import { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const generateRandomString = () => {
     var result = '';
@@ -28,6 +31,17 @@ function redirectToReddit() {
 }
 
 export const LandingPage = () => {
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log(auth.bearerToken)
+        if(auth.bearerToken) {
+            console.log('taking you away from the landing page')
+            navigate('/homepage')
+        }
+    }, [auth, navigate])
+
     return (
         <div className='LandingPage'>
             <div className="IntroBox">
@@ -38,7 +52,6 @@ export const LandingPage = () => {
 
             </div>
             <div className='LottieImage'>
-                
                 <Lottie animationData={UFOLottie} />
                 <button onClick={() => { redirectToReddit() }}>Login </button>
             </div>

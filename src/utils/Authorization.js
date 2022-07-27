@@ -39,7 +39,6 @@ export const AuthProvider = (props) => {
     const params = new URLSearchParams(document.location.search);
     const handleLogin = async () => {
       let redditOneTimeUseCode = params.get('code');
-
       let auth;
       if (redditOneTimeUseCode) {
         auth = await getToken(redditOneTimeUseCode);
