@@ -1,64 +1,75 @@
 .PostBox {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    margin-bottom: 20px;
-    width: 100%;
-    border-radius: 10px;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  overflow: hidden;
 }
 
 .LeftSide {
-    display: flex;
-    flex-direction: column;
-    background-color: #4D487E;
-    width: 10%;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    font-weight: 500;
-    font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #4D487E;
+  width: 10%;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.LeftSide p {
+  margin: 0;
 }
 
 .RightSide {
-    width: 90%;
-    padding: 2% 2% 2% 2%;
-    display: flex;
-    border: 1px #4D487E solid;
-    border-radius: 0px 10px 10px 0;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  width: 90%;
+  padding: 2% 2% 2% 2%;
+  display: flex;
+  border: 1px #4D487E solid;
+  border-radius: 0px 10px 10px 0;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .Title {
-    font-size: 20px;
-    font-weight: bold;
-    height: -webkit-fill-available;
+  font-size: 20px;
+  font-weight: bold;
+  height: -webkit-fill-available;
 }
 
 .Media {
-    width: 100%;
+  width: 100%;
 }
 
 .Media iframe {
-    background-size: contain;
+  background-size: contain;
 }
 
 .SubredditDetails {
-    width: 95%;
-    margin: auto;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
-    font-size: 10px;
-    margin-bottom: 10px;
+  width: 95%;
+  margin: auto;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
 .SubredditDetails p {
-    color: gray;
-    margin: 0;
+  text-align: right;
+  color: gray;
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .LeftSide p {
+    font-size: 80%;
+  }
 }

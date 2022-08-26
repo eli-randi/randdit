@@ -1,63 +1,65 @@
 .PostsBox {
-    height: auto;
-    background-color: white;
-    width: 60%;
-    border-radius: 10px;
-    border: 1px solid #8F8BBD;
+  height: auto;
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+  border: 1px solid #8F8BBD;
 }
 
-
 .PostsChooseBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 3%;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 
 .PostsChooseBox button {
-    border-radius: 40px;
-    border: 1px solid #8F8BBD;
-    background-color: white;
-    width: 19%;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    font-weight: bold;
-    color: #4D487E
+  border-radius: 40px;
+  border: 1px solid #8F8BBD;
+  background-color: white;
+  min-width: 20%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  color: #4D487E
 }
 
 .PostsChooseBox button:hover {
-    background-color: #E1E0EE;
-    cursor: pointer;
+  background-color: #E1E0EE;
+  cursor: pointer;
 }
 
 .PostsChooseBox button:active {
-    background-color: #8F8BBD;
-    color: white;
+  background-color: #8F8BBD;
+  color: white;
 }
 
 .PostsChooseBox button.current {
-    background-color: #4D487E;
-    color: white;
+  background-color: #4D487E;
+  color: white;
 }
 
 .PostsList {
-    margin: 5% 5%;
-
+  margin: 5% 5%;
 }
 
 .LoadingPosts {
-    border: 1px #4D487E solid;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 5% 5%;
+  border: 1px #4D487E solid;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5% 5%;
 }
 
 @media only screen and (max-width: 800px) {
-    .PostsBox {
-        width: 90%
-    }
+  .PostsBox {
+    width: 90%
+  }
+
+  .PostsChooseBox button {
+    font-size: 10px;
+  }
 }

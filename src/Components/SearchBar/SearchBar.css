@@ -1,31 +1,28 @@
- .SearchBar {
-     margin-right: 30px;
-     border-radius: 10px;
-     font-family: 'IBM Plex Sans', 'sans serif';
-     margin-top: 7px;
-     width: 300px;
- }
+.SearchBar {
+  margin-right: 30px;
+  border-radius: 10px;
+  font-family: 'IBM Plex Sans', 'sans serif';
+  margin-top: 7px;
+  width: 300px;
+}
 
- .SearchBar fieldset {
-     height: 50px;
- }
+.SearchBar fieldset {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
 
+.SearchBar label {
+  color: #8F8BBD;
+  font-size: 80%;
+}
 
- .SearchBar label {
-     color: #8F8BBD;
-     top: -3px;
- }
+.SearchBar button {
+  top: -3px;
+}
 
- .SearchBar.MuiFormLabel {
-     color: white
- }
-
- .SearchBar button {
-     top: -3px;
- }
-
- @media only screen and (max-width: 600px) {
-     .SearchBar {
-         width: 100px;
-     }
- }
+@media only screen and (max-width: 600px) {
+  .SearchBar {
+    width: 100px;
+  }
+}

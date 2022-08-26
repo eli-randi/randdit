@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+
 import { getSearchResults } from './SearchBarSlice';
 import { selectSearch } from './SearchBarSlice';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { AuthContext } from '../../utils/Authorization';
-import { Link } from 'react-router-dom';
+
 import './SearchBar.css'
 
 export default function SearchBar() {
@@ -25,7 +28,7 @@ export default function SearchBar() {
     <Autocomplete
       id="search-bar"
       className='SearchBar'
-      // sx={{ width: 300}}
+      sx={{ width: '30%' }}
       options={searchResults}
       autoHighlight
       getOptionLabel={(option) => option.display_name_prefixed}

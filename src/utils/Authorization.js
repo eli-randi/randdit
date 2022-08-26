@@ -1,6 +1,7 @@
 import { Buffer } from "buffer";
 import { useEffect, createContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
 import { useLocalStorage } from "./LocalStorage";
 
 const hostUri = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://randdit.elisa.codes/'
@@ -37,20 +38,18 @@ export const AuthProvider = (props) => {
     const params = new URLSearchParams(document.location.search);
     const handleLogin = async () => {
       let redditOneTimeUseCode = params.get('code');
-      
       if (bearerToken && location.pathname === '/') {
-        
         navigate('/homepage')
       } else if (redditOneTimeUseCode) {
         const auth = await getToken(redditOneTimeUseCode);
         setBearerToken(auth.access_token);
-      } else if (bearerToken == null){
+      } else if (bearerToken == null) {
         if (location.pathname !== '/') {
           navigate('/')
         }
       }
     }
-      handleLogin();
+    handleLogin();
   }
     , [bearerToken, setBearerToken, location.pathname, navigate]
   )

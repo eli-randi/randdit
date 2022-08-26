@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFromApi } from "../../utils/APICalls";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
+import { getFromApi } from "../../utils/APICalls";
 
 export const getSearchResults = createAsyncThunk('search/getSearch',
     async ({ auth, searchTerm }) => {
@@ -41,7 +41,6 @@ const searchSlice = createSlice({
         }
     }
 })
-
 
 export const selectSearch = (state) => state.search.searchResults;
 
